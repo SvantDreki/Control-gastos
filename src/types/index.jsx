@@ -1,0 +1,17 @@
+
+//Modal
+export const ACTIVAR_MODAL = 'ACTIVAR_MODAL'
+export const DESACTIVAR_MODAL = 'DESACTIVAR_MODAL'
+export const ANIMAR_MODAL = 'ANIMAR_MODAL'
+
+//Presupuesto 
+export const PRESUPUESTO_EXITO = 'PRESUPUESTO_EXITO'
+export const PRESUPUESTO_ERROR = 'PRESUPUESTO_ERROR'
+export const VALIDAR_EXITO = 'VALIDAR_EXITO'
+export const VALIDAR_ERROR = 'VALIDAR_ERROR'
+
+//Gastos
+export const AGREGAR_GASTO = 'AGREGAR_GASTO'
+export const EDITAR_GASTO = 'EDITAR_GASTO'
+export const ELIMNAR_GASTO = 'ELIMNAR_GASTO'
+export const FILTRAR_GASTOS = 'FILTRAR_GASTOS'
