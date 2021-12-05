@@ -2,7 +2,8 @@ import {
     PRESUPUESTO_EXITO,
     PRESUPUESTO_ERROR,
     VALIDAR_EXITO,
-    VALIDAR_ERROR
+    VALIDAR_ERROR,
+    RESETEAR_PRESUPUESTO
 } from '../types'
 
 const inicialState = {
@@ -27,6 +28,12 @@ const presupuestoReducer = ( state = inicialState, action ) => {
             return {
                 ...state,
                 esValido: action.payload
+            }
+        case RESETEAR_PRESUPUESTO:
+            return {
+                ...state,
+                presupuesto: action.payload.presu,
+                esValido: action.payload.valido
             }
         default:
             return state;

@@ -1,8 +1,8 @@
 import {
     PRESUPUESTO_EXITO, 
-    PRESUPUESTO_ERROR,
     VALIDAR_EXITO,
-    VALIDAR_ERROR
+    VALIDAR_ERROR,
+    RESETEAR_PRESUPUESTO
 } from '../types'
 
 export const agregaPresupuesto = presupuesto => (
@@ -25,3 +25,13 @@ export const validarPresupuesto = validar => {
         }
     }
 }
+
+export const reiniciarPresupuesto = (presu, valido) => (
+    {
+        type: RESETEAR_PRESUPUESTO,
+        payload: {
+            presu,
+            valido
+        }
+    }
+)

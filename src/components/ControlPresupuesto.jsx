@@ -4,7 +4,7 @@ import 'react-circular-progressbar/dist/styles.css'
 import { useDispatch, useSelector } from 'react-redux'
 
 //Redix
-import { agregaPresupuesto, validarPresupuesto } from '../actions/presupuesto'
+import { reiniciarPresupuesto } from '../actions/presupuesto'
 import { agregarGasto } from '../actions/gastos'
 
 const ControlPresupuesto = () => {
@@ -15,9 +15,8 @@ const ControlPresupuesto = () => {
 
     const dispatch = useDispatch();
 
-    const setPresupuesto = presu => dispatch( agregaPresupuesto(presu) ) 
-    const setEsValido = validar => dispatch( validarPresupuesto(validar) )
     const setGastos = gasto => dispatch( agregarGasto(gasto) )
+    const resetear = ( presu, valido ) => dispatch( reiniciarPresupuesto(presu, valido) )
 
     const { presupuesto } = useSelector( state => state.presupuesto )
     const { gastos } = useSelector( state => state.gastos )
@@ -49,9 +48,8 @@ const ControlPresupuesto = () => {
         const result = confirm('¿Deseas reiniciar presupuesto y gastos?');
 
         if(result) {
-            setPresupuesto(0)
+            resetear(0, false)
             setGastos([])
-            setEsValido(false)
         }
     }
 
